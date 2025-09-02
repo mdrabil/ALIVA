@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALIVA</title>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+ <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+/* Fade-in animation */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 1s ease-out forwards;
+  opacity: 0;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const animatedElements = document.querySelectorAll("[data-animate]");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const animationType = el.dataset.animate;
+
+        if (animationType === "fade-up") {
+          el.classList.add("animate-fade-up");
+        }
+
+        // Optional: stop observing after animation runs once
+        observer.unobserve(el);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  animatedElements.forEach((el) => {
+    observer.observe(el);
+  });
+});
+</script>
+
+
+</head>
+<body class="bg-white">
+
+  <!-- Header -->
+  <header class="shadow">
+    <div class="flex justify-between items-center main-container">
+      
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img src="/images/image 2.svg" alt="ALIVA Logo" class="h-10 w-auto">
+      </div>
+
+      <div class="flex items-center gap-10">
+
+      <!-- Nav Links (Desktop) -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="index.html" class="nav-link uppercase ">Home</a>
+        <a href="#" class="nav-link uppercase ">About</a>
+        <a href="services.html" class="nav-link uppercase ">Services</a>
+        <a href="#" class="nav-link uppercase ">Pricing</a>
+        <a href="#" class="nav-link uppercase ">Insights</a>
+        <a href="#" class="nav-link uppercase ">Contact</a>
+        
+        <!-- Login Button -->
+      </nav>
+        <div class="hidden md:block">
+          <button class="bg-[var(--main-color)] header-btn">
+            Login
+          </button>
+        </div>
+
+      </div>
+
+
+      <!-- Mobile Menu Toggle -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+      <nav class="flex flex-col space-y-2">
+        <a href="index.html" class="nav-link uppercase ">Home</a>
+        <a href="#" class="nav-link uppercase">About</a>
+        <a href="services.html" class="nav-link uppercase">Services</a>
+        <a href="#" class="nav-link uppercase">Pricing</a>
+        <a href="#" class="nav-link uppercase">Insights</a>
+        <a href="#" class="nav-link uppercase">Contact</a>
+        <button class="bg-[var(--main-color)] text-white px-5 py-2 rounded-md uppercase font-semibold hover:bg-orange-600 transition">
+          Login
+        </button>
+      </nav>
+    </div>
+  </header>
+<div class="main-container">
+ <div class="flex flex-col mb-10 md:flex-row w-full gap-10 mb-10"  data-animate="fade-up">
+
+    <!-- Left Image + Support Box -->
+    <div class="relative flex-2 flex items-center justify-center"  data-animate="fade-up">
+      <img src="/images/men image 1.png" 
+           alt="Virtual Assistant" 
+           class="rounded-lg shadow-lg object-cover w-full">
+      <div class="absolute bottom-2  bg-[var(--dark-bg-color)] bg-opacity-90 text-white rounded-md shadow-md">
+        <ul class="list-disc list-inside p-4 text-lg space-y-2">
+          <li>Dedicated Support, Every Time</li>
+          <li>No Subscriptions or Hidden Fees</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Right Content -->
+    <div class="flex-1 bg-[var(--light-bg-color)] px-6  rounded-lg shadow-sm flex flex-col ">
+      <h1 class="home-text">
+        Simplify Your Life With A
+        <br>
+         Virtual 
+         Assistant 
+        <span class="text-green-600"> - Flat $9/Hr</span>
+      </h1>
+      <p class="mb-6 text-lg md:text-xl text-gray-700">
+        By managing your daily administrative tasks, your time and energy are freed up 
+        to focus on what matters most. Making online visibility easy allows you to grow without stress.
+      </p>
+      <button class="project-btn bg-orange-500 text-white font-semibold py-3 px-6 rounded-md hover:bg-orange-600 transition duration-300 w-fit">
+        Let’s Get Started - Sign Up Now
+      </button>
+    </div>
+
+  </div>
+
+
+<div>
+  <div class="header-title">
+    <h1>
+  The Support You Need to Thrive
+
+</h1>
+    <p>A Wing General Virtual Assistant (GVA) will take care of your administrative and personal work and help you streamline your day-to-day operations so you can focus on growing your business and achieving your goals.</p>
+  </div>
+
+<div class=" w-full">
+    <div class="contain-boxes" data-animate="fade-up">
+    <div class="content-box">
+      <div class="right-img">
+        <img src="/images/Admin-pana 1.png" alt="">
+      </div>
+      <div class="content">
+        <h3>Admin Services</h3>
+        <p>Daily tasks are managed, leaving you free to focus on strategy.</p>
+      </div>
+    </div>
+     <div class="content-box">
+      <div class="right-img">
+        <img src="/images/Product iteration-rafiki 1.png" alt="">
+      </div>
+      <div class="content">
+        <h3>Business Operations</h3>
+        <p>Streamline your workflows and improve efficiency.</p>
+      </div>
+    </div>
+  </div>
+
+     <div class="contain-boxes" data-animate="fade-up">
+    <div class="content-box">
+      <div class="right-img">
+        <img src="/images/Niche service marketplace-amico 1.png" alt="">
+      </div>
+      <div class="content">
+        <h3>eCommerce Support</h3>
+        <p>Manage your online store, from product listings to customer service.</p>
+      </div>
+    </div>
+     <div class="content-box">
+      <div class="right-img">
+        <img src="/images/Illustration.png" alt="">
+      </div>
+      <div class="content">
+        <h3>CRM & Bookkeeping</h3>
+        <p>Keep your finances and client relationships organized and up-to-date.</p>
+      </div>
+    </div>
+  </div>
+
+       <div class="contain-boxes"  data-animate="fade-up">
+    <div class="content-box">
+      <div class="right-img">
+        <img src="/images/Social media-cuate 1.png" alt="">
+      </div>
+      <div class="content">
+        <h3>Social Media</h3>
+        <p>Elevate your brand with an engaging online presence.</p>
+      </div>
+    </div>
+     <div class="content-box">
+      <div class="right-img">
+        <img src="/images/Conversion rate optimization-amico 1.png" alt="">
+      </div>
+      <div class="content">
+        <h3>Digital Marketing</h3>
+        <p>Making online visibility easy allows you to focus on scaling your business.</p>
+      </div>
+    </div>
+  </div>
+         <div class="contain-boxes" data-animate="fade-up">
+    <div class="content-box">
+      <div class="right-img">
+        <img src="/images/Designer-amico 1.png" alt="">
+      </div>
+      <div class="content">
+        <h3>Graphic Design</h3>
+        <p>Get stunning visuals for your brand, from logos to social media posts.</p>
+      </div>
+    </div>
+     <div class="content-box">
+      <div class="right-img">
+        <img src="/images/Static website-rafiki 1.png" alt="">
+      </div>
+      <div class="content">
+        <h3>Website Design</h3>
+        <p>Launch a professional, high-performing website for your business.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="bg-[var(--dark-bg-color)] w-full flex flex-col md:flex-row items-center justify-between gap-6 md:gap-20 p-6 md:p-10 rounded-md mb-10 mt-6"  data-animate="fade-up">
+  <!-- Left Text Section -->
+  <div class="text-center md:text-left">
+    <h2 class="text-[24px] md:text-[35px] font-semibold text-white capitalize mb-4 md:mb-6">
+      Efficiency delivered reclaimed
+    </h2>
+    <p class="text-[14px] md:text-[16px] text-white leading-6 font-light">
+      A Wing General Virtual Assistant (GVA) will take care of your administrative and personal work and help you streamline 
+      your day-to-day operations so you can focus on growing your business and achieving your goals.
+    </p>
+  </div>
+
+  <!-- Right Button -->
+  <div
+    class="header-btn w-fit text-[16px] md:text-[18px] 
+           px-6 py-2 mt-6 md:mt-0 rounded-md text-white bg-[var(--main-color)] 
+           font-semibold text-center whitespace-nowrap"
+  >
+    Explore All Services
+  </div>
+</div>
+
+
+
+<div>
+
+  <div class="header-title">
+    <h1>
+Your Life, Simplified in 3 Steps
+
+</h1>
+    <!-- <p>A Wing General Virtual Assistant (GVA) will take care of your administrative and personal work and help you streamline your day-to-day operations so you can focus on growing your business and achieving your goals.</p> -->
+  </div>
+<div class="section-4-boxes">
+  <div class="section-4-box" data-animate="fade-up">
+    <img src="/images/Login-rafiki 1.png" alt="">
+    <h2> Sign Up</h2>
+    <p>An easy process that takes 
+less than a minute.</p>
+  </div>
+    <div class="section-4-box"  data-animate="fade-up">
+    <img src="/images/Voice chat-amico 1.png" alt="">
+    <h2>  Let’s Talk</h2>
+    <p>A conversation to 
+understand the needs .</p>
+  </div>
+    <div class="section-4-box"  data-animate="fade-up">
+    <img src="/images/Static website-rafiki 1 (1).png" alt="">
+    <h2>Submit Your Task</h2>
+    <p>Just send tasks and
+ consider them done.</p>
+  </div>
+</div>
+</div>
+
+
+<div class="section-5 flex gap-10 justify-between mb-10">
+  <div class="section-5-left w-full">
+    <h1><span>15 years since</span> we help you to grow your business</h1>
+    <p>A Wing General Virtual Assistant (GVA) will take care of your administrative and personal personal peeronsl <br> work and help you streamline your day-to-day operations so you can focus on growing your business and <br> achieving your goals.</p>
+    <div class="section-5-btn" data-animate="fade-up"
+>
+  more about us <i class="ri-arrow-right-line"></i>
+</div>
+  </div>
+  <div class="section-5-right" data-animate="fade-up">
+    <img src="/images/Gemini_Generated_Image_4f39d04f39d04f39 1.png" alt="">
+  </div>
+</div>
+
+</div>
+
+
+<div class="section-6 mb-10">
+
+    <div class="header-title" data-animate="fade-up">
+    <h1>
+  Frequently Asked Questions
+
+</h1>
+    <p>
+  Ally VA focuses on quality, not quantity. A limited number of clients ensures each task gets the attention it deserves. No generic service. Each task is handled with care and precision, ensuring satisfaction.
+    </p>
+  </div>
+
+<div class="faq">
+  <div class="faq-item">
+    <div class="faq-question">
+      <span>Who typically benefits from your services?</span>
+      <i class="ri-arrow-up-s-line"></i>
+    </div>
+    <div class="faq-answer">
+      <p>
+   Entrepreneurs, small business owners, and busy professionals—anyone who needs help with daily operations but doesn’t want to hire a full-time employee.
+      </p>
+    </div>
+  </div>
+    <div class="faq-item">
+    <div class="faq-question">
+      <span>Do I get a dedicated assistant? </span>
+      <i class="ri-arrow-up-s-line"></i>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Our services are designed for small businesses, startups, and
+        professionals who want to improve efficiency and streamline workflows.
+      </p>
+    </div>
+  </div>
+
+      <div class="faq-item">
+    <div class="faq-question">
+      <span>Is the $9/hour rate the same for all tasks? </span>
+      <i class="ri-arrow-up-s-line"></i>
+    </div>
+    <div class="faq-answer">
+      <p>
+        Our services are designed for small businesses, startups, and
+        professionals who want to improve efficiency and streamline workflows.
+      </p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div class="section-7 py-8 px-4 sm:px-6 lg:px-12 bg-[var(--light-bg-color)] text-center">
+  <h1
+    class="text-[20px] sm:text-[22px] md:text-[25px] lg:text-[30px] 
+           font-semibold mb-6 leading-snug"  data-animate="fade-up"
+  >
+    Still Have Questions? Help Is Just a Message Away.
+  </h1>
+
+  <div
+    class="section-5-btn inline-block 
+           px-4 py-2 sm:px-6 sm:py-3 
+           rounded-md text-white 
+           text-[14px] sm:text-[16px] md:text-[18px] 
+           bg-[var(--main-color)] font-semibold 
+           cursor-pointer transition-colors duration-300"
+  >
+    Contact Anytime
+  </div>
+</div>
+
+
+
+</div>
+
+<footer class="w-full bg-[var(--footer-color)]">
+  <div class="main-container h-[105px] flex flex-col md:flex-row items-center justify-between">
+    <!-- Left Text -->
+    <h2 class="text-white text-[16px] md:text-[18px] font-bold text-center md:text-left">
+      Privacy Policy | © 2025 Ally VA
+    </h2>
+
+    <!-- Social Icons -->
+    <div class="icons flex items-center gap-4 md:gap-5 text-white text-[20px] md:text-[25px] mt-2 md:mt-0">
+      <i class="ri-linkedin-fill"></i>
+      <i class="ri-twitter-fill"></i>
+      <i class="ri-facebook-fill"></i>
+      <i class="ri-youtube-fill"></i>
+      <i class="ri-instagram-fill"></i>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

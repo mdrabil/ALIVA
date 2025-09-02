@@ -1,0 +1,170 @@
+/* Services Boxes Grid */
+.services-boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem; /* 50px replaced for relative spacing */
+  margin: 2rem 0;
+}
+
+/* Individual Service Box */
+.service-box {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 0.1px solid #368268;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Header (Icon + Title) */
+.service-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.service-header img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Title */
+.service-box h3 {
+  font-size: 1.375rem; /* 22px */
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Paragraph */
+.service-box p {
+  font-size: 1rem; /* 16px */
+  margin-bottom: 1rem;
+  font-weight: 400;
+  font-family: var(--lato-font);
+}
+
+/* List inside service box */
+.service-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-box ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-box ul li img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.service-box ul li h6 {
+  font-size: 1rem; /* 16px */
+  font-weight: 400;
+  font-family: var(--lato-font);
+  margin: 0;
+}
+
+/* Workflow Section */
+.workflow-section {
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+
+.workflow-title {
+  font-size: 1.125rem; /* 18px */
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+/* Icons Row */
+.services-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.35);
+}
+
+.service-icon img {
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.service-icon img:hover {
+  transform: scale(1.1);
+}
+
+/* ================= Responsive ================= */
+
+/* Tablets: 2 columns for service boxes */
+@media (max-width: 1024px) {
+  .services-boxes {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .workflow-title {
+    font-size: 1.25rem; /* 20px */
+  }
+
+  .service-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .service-icon img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Mobile: 1 column for service boxes */
+@media (max-width: 640px) {
+  .services-boxes {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .workflow-title {
+    font-size: 1.1rem; /* 18px */
+  }
+
+  .service-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .service-icon img {
+    width: 30px;
+    height: 30px;
+  }
+}

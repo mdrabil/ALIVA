@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ABOUT ALIVA</title>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+ <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-white">
+
+  <!-- Header -->
+  <header class="shadow">
+    <div class="flex justify-between items-center  main-container">
+      
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img src="/images/image 2.svg" alt="ALIVA Logo" class="h-10 w-auto">
+      </div>
+
+      <div class="flex items-center gap-10">
+
+      <!-- Nav Links (Desktop) -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="index.html" class="nav-link uppercase ">Home</a>
+        <a href="about.html" class="nav-link uppercase ">About</a>
+        <a href="services.html" class="nav-link uppercase ">Services</a>
+        <a href="pricing.html" class="nav-link uppercase ">Pricing</a>
+        <a href="insights.html" class="nav-link uppercase ">Insights</a>
+        <a href="contact.html" class="nav-link uppercase ">Contact</a>
+        
+        <!-- Login Button -->
+      </nav>
+        <div class="hidden md:block">
+          <button class="bg-[var(--main-color)] header-btn">
+            Login
+          </button>
+        </div>
+
+      </div>
+
+
+      <!-- Mobile Menu Toggle -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+      <nav class="flex flex-col space-y-2">
+        <a href="index.html" class="nav-link uppercase">Home</a>
+        <a href="about.html" class="nav-link uppercase">About</a>
+        <a href="services.html" class="nav-link uppercase">Services</a>
+        <a href="pricing.html" class="nav-link uppercase">Pricing</a>
+        <a href="insights.html" class="nav-link uppercase">Insights</a>
+        <a href="contact.html" class="nav-link uppercase">Contact</a>
+        <button class="bg-[var(--main-color)] text-white px-5 py-2 rounded-md uppercase font-semibold hover:bg-orange-600 transition">
+          Login
+        </button>
+      </nav>
+    </div>
+  </header>
+<div class="main-section">
+
+</div>
+
+<footer class="w-full bg-[var(--footer-color)]">
+  <div class="main-container h-[105px] flex flex-col md:flex-row items-center justify-between">
+    <!-- Left Text -->
+    <h2 class="text-white text-[16px] md:text-[18px] font-bold text-center md:text-left">
+      Privacy Policy | © 2025 Ally VA
+    </h2>
+
+    <!-- Social Icons -->
+    <div class="icons flex items-center gap-4 md:gap-5 text-white text-[20px] md:text-[25px] mt-2 md:mt-0">
+      <i class="ri-linkedin-fill"></i>
+      <i class="ri-twitter-fill"></i>
+      <i class="ri-facebook-fill"></i>
+      <i class="ri-youtube-fill"></i>
+      <i class="ri-instagram-fill"></i>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

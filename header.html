@@ -1,0 +1,54 @@
+  <!-- Header -->
+  <header class="shadow">
+    <div class="flex justify-between items-center  main-container">
+      
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img src="/images/image 2.svg" alt="ALIVA Logo" class="h-10 w-auto">
+      </div>
+
+      <div class="flex items-center gap-10">
+
+      <!-- Nav Links (Desktop) -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="index.html" class="nav-link uppercase ">Home</a>
+        <a href="about.html" class="nav-link uppercase ">About</a>
+        <a href="services.html" class="nav-link uppercase ">Services</a>
+        <a href="pricing.html" class="nav-link uppercase ">Pricing</a>
+        <a href="insights.html" class="nav-link uppercase ">Insights</a>
+        <a href="contact.html" class="nav-link uppercase ">Contact</a>
+        
+        <!-- Login Button -->
+      </nav>
+        <div class="hidden md:block">
+          <button class="bg-[var(--main-color)] header-btn">
+            Login
+          </button>
+        </div>
+
+      </div>
+
+
+      <!-- Mobile Menu Toggle -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+      <nav class="flex flex-col space-y-2">
+        <a href="index.html" class="nav-link uppercase">Home</a>
+        <a href="about.html" class="nav-link uppercase">About</a>
+        <a href="services.html" class="nav-link uppercase">Services</a>
+        <a href="pricing.html" class="nav-link uppercase">Pricing</a>
+        <a href="insights.html" class="nav-link uppercase">Insights</a>
+        <a href="contact.html" class="nav-link uppercase">Contact</a>
+        <button class="bg-[var(--main-color)] text-white px-5 py-2 rounded-md uppercase font-semibold hover:bg-orange-600 transition">
+          Login
+        </button>
+      </nav>
+    </div>
+  </header>

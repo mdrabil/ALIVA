@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALIVA</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/services.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Fade-in animation */
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-up {
+      animation: fadeUp 1s ease-out forwards;
+      opacity: 0;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const animatedElements = document.querySelectorAll("[data-animate]");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const animationType = el.dataset.animate;
+
+            if (animationType === "fade-up") {
+              el.classList.add("animate-fade-up");
+            }
+
+            // Optional: stop observing after animation runs once
+            observer.unobserve(el);
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      animatedElements.forEach((el) => {
+        observer.observe(el);
+      });
+    });
+  </script>
+
+
+</head>
+
+<body class="bg-white">
+
+  <!-- Header -->
+  <header class="shadow">
+    <div class="flex justify-between items-center main-container">
+
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img src="/images/image 2.svg" alt="ALIVA Logo" class="h-10 w-auto">
+      </div>
+
+      <div class="flex items-center gap-10">
+
+        <!-- Nav Links (Desktop) -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="index.html" class="nav-link uppercase ">Home</a>
+          <a href="#" class="nav-link uppercase ">About</a>
+          <a href="services.html" class="nav-link uppercase ">Services</a>
+          <a href="#" class="nav-link uppercase ">Pricing</a>
+          <a href="#" class="nav-link uppercase ">Insights</a>
+          <a href="#" class="nav-link uppercase ">Contact</a>
+
+          <!-- Login Button -->
+        </nav>
+        <div class="hidden md:block">
+          <button class="bg-[var(--main-color)] header-btn">
+            Login
+          </button>
+        </div>
+
+      </div>
+
+
+      <!-- Mobile Menu Toggle -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+      <nav class="flex flex-col space-y-2">
+        <a href="index.html" class="nav-link uppercase">Home</a>
+        <a href="#" class="nav-link uppercase">About</a>
+        <a href="services.html" class="nav-link uppercase">Services</a>
+        <a href="#" class="nav-link uppercase">Pricing</a>
+        <a href="#" class="nav-link uppercase">Insights</a>
+        <a href="#" class="nav-link uppercase">Contact</a>
+        <button
+          class="bg-[var(--main-color)] text-white px-5 py-2 rounded-md uppercase font-semibold hover:bg-orange-600 transition">
+          Login
+        </button>
+      </nav>
+    </div>
+  </header>
+  <div class="main-container">
+    <div class="project-banner ">
+      <h1 class="banner-title" data-animate="fade-up">
+      Services That Power Your Progress
+      </h1>
+      <p class="banner-para" data-animate="fade-up">Explore a full suite of virtual assistant services designed to simplify operations, elevate
+        your brand, and drive growth. From admin precision to creative execution, <br> each offering is crafted for
+        clarity, consistency, and impact. Whether scaling a startup or refining daily workflows, every detail is handled
+        with care and strategy.</p>
+    </div>
+
+
+<div class="services-boxes ">
+  <div class="service-box" data-animate="fade-up">
+    <div class="service-header">
+      <img src="/images/serviceimg/clarity_administrator-solid.png" alt="">
+      <h3>Administrative Support</h3>
+    </div>
+    <p>Expert support to handle essential tasks and free up your time.</p>
+    <ul>
+      <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>General Admin Tasks</h6>
+      </li>
+      <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Document Handling</h6>
+      </li>
+         <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Data Entry & Research</h6>
+      </li>
+    </ul>
+  </div>
+  <div class="service-box" data-animate="fade-up">
+    <div class="service-header">
+      <img src="/images/serviceimg/icon-park-solid_reverse-operation-out.png" alt="">
+      <h3>Operations Oversight</h3>
+    </div>
+    <p>Streamlining workflows and coordinating key processes for seamless execution.</p>
+    <ul>
+      <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Day-to-day Operations</h6>
+      </li>
+      <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Project Coordination</h6>
+      </li>
+        <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Team & HR support</h6>
+      </li>
+    </ul>
+  </div>
+    <div class="service-box" data-animate="fade-up">
+    <div class="service-header">
+      <img src="/images/serviceimg/Vector.png" alt="">
+      <h3>eCommerce Services</h3>
+    </div>
+    <p>
+  Handling the details of your online store so you can focus on growth.
+    </p>
+    <ul>
+      <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Product Listing</h6>
+      </li>
+      <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Order Processing</h6>
+      </li>
+        <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Customer Service</h6>
+      </li>
+    </ul>
+  </div>
+      <div class="service-box" data-animate="fade-up">
+    <div class="service-header">
+      <img src="/images/serviceimg/streamline-ultimate_customer-relationship-management-lead-management-1-bold.png" alt="">
+      <h3>CRM & Bookkeeping</h3>
+    </div>
+    <p>
+Organizing Client Data And Managing Financial Records For Your Business.
+</p>
+    <ul>
+      <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>CRM Management</h6>
+      </li>
+      <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Manage Financial Records</h6>
+      </li>
+        <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Expense Logging</h6>
+      </li>
+    </ul>
+  </div>
+      <div class="service-box" data-animate="fade-up">
+    <div class="service-header">
+      <img src="/images/serviceimg/Vector (1).png" alt="">
+      <h3>Social Media Management</h3>
+    </div>
+    <p>
+Building Your Brand And Engaging Your Audience Across All Digital Platforms.
+</p>
+    <ul>
+      <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Content Scheduling</h6>
+      </li>
+      <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Audience Engagement</h6>
+      </li>
+        <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Running Ads</h6>
+      </li>
+    </ul>
+  </div>
+      <div class="service-box" data-animate="fade-up">
+    <div class="service-header">
+      <img src="/images/serviceimg/icon-park-solid_graphic-design.png" alt="">
+      <h3>Graphic Design</h3>
+    </div>
+    <p>
+Creating Professional, On-brand Visuals For Your Website And Social Media.
+</p>
+    <ul>
+      <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Social Media Graphics</h6>
+      </li>
+      <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Brand Assets And Logos</h6>
+      </li>
+        <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Marketing Materials</h6>
+      </li>
+    </ul>
+  </div>
+       <div class="service-box" data-animate="fade-up">
+    <div class="service-header">
+      <img src="/images/serviceimg/ri_seo-fill.png" alt="">
+      <h3>Essential SEO</h3>
+    </div>
+    <p>
+Enhancing Your Content To Improve Search Performance And Audience Engagement.
+</p>
+    <ul>
+      <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Keyword Research</h6>
+      </li>
+      <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>On-page SEO</h6>
+      </li>
+        <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Content Optimization</h6>
+      </li>
+    </ul>
+  </div>
+         <div class="service-box" data-animate="fade-up">
+    <div class="service-header">
+      <img src="/images/serviceimg/Vector (2).png" alt="">
+      <h3>Website Development</h3>
+    </div>
+    <p>
+Designing, Building, And Maintaining Websites To Elevate Your Online Presence.
+</p>
+    <ul>
+      <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Website Design</h6>
+      </li>
+      <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Content Updates</h6>
+      </li>
+        <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Website Maintenance</h6>
+      </li>
+    </ul>
+  </div>
+  <div class="service-box" data-animate="fade-up">
+    <div class="service-header">
+      <img src="/images/serviceimg/streamline-ultimate_headphones-customer-support-question-bold.png" alt="">
+      <h3>IT Solutions</h3>
+    </div>
+    <p>
+Remote Technical Help To Resolve Issues Fast And Keep Systems Running.
+</p>
+    <ul>
+      <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Remote Troubleshooting</h6>
+      </li>
+      <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Software And App Support</h6>
+      </li>
+        <li>
+        <img src="/images/serviceimg/Frame (5).png" alt="">
+        <h6>Technical Assistance</h6>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="workflow-section">
+  <h3 class="workflow-title" data-animate="fade-up">A Few Workflow Essentials From a Limitless Toolkit</h3>
+  <div class="services-icons" data-animate="fade-up">
+    <div class="service-icon">
+      <img src="/images/serviceimg/Frame.png" alt="">
+    </div>
+    <div class="service-icon">
+      <img src="/images/serviceimg/Frame (1).png" alt="">
+    </div>
+    <div class="service-icon">
+      <img src="/images/serviceimg/Frame (2).png" alt="">
+    </div>
+    <div class="service-icon">
+      <img src="/images/serviceimg/Frame (3).png" alt="">
+    </div>
+       <div class="service-icon">
+      <img src="/images/serviceimg/Frame (4).png" alt="">
+    </div>
+  </div>
+</div>
+
+
+ 
+
+
+  
+
+
+    <div class="section-7 py-8 px-4 sm:px-6 lg:px-12 bg-[var(--light-bg-color)] text-center mb-5">
+      <h1 class="text-[20px] sm:text-[22px] md:text-[25px] lg:text-[30px] 
+           font-semibold mb-6 leading-snug" data-animate="fade-up">
+       Ready To Reclaim Your Time And Grow Your Business?
+      </h1>
+
+      <div class="section-5-btn inline-block 
+           px-4 py-2 sm:px-6 sm:py-3 
+           rounded-md text-white 
+           text-[14px] sm:text-[16px] md:text-[18px] 
+           bg-[var(--main-color)] font-semibold 
+           cursor-pointer transition-colors duration-300">
+        Let’s Get Started - Sign Up Now
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <footer class="w-full bg-[var(--footer-color)]">
+    <div class="main-container h-[105px] flex flex-col md:flex-row items-center justify-between">
+      <!-- Left Text -->
+      <h2 class="text-white text-[16px] md:text-[18px] font-bold text-center md:text-left">
+        Privacy Policy | © 2025 Ally VA
+      </h2>
+
+      <!-- Social Icons -->
+      <div class="icons flex items-center gap-4 md:gap-5 text-white text-[20px] md:text-[25px] mt-2 md:mt-0">
+        <i class="ri-linkedin-fill"></i>
+        <i class="ri-twitter-fill"></i>
+        <i class="ri-facebook-fill"></i>
+        <i class="ri-youtube-fill"></i>
+        <i class="ri-instagram-fill"></i>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+
+</html>
