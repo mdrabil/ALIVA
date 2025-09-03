@@ -72,7 +72,7 @@
   <!-- Header -->
   <header class="shadow">
     <div class="flex justify-between items-center main-container">
-
+      
       <!-- Logo -->
       <div class="flex items-center">
         <img src="/images/image 2.svg" alt="ALIVA Logo" class="h-10 w-auto">
@@ -80,21 +80,25 @@
 
       <div class="flex items-center gap-10">
 
-        <!-- Nav Links (Desktop) -->
-        <nav class="hidden md:flex space-x-8">
-          <a href="index.html" class="nav-link uppercase ">Home</a>
-          <a href="#" class="nav-link uppercase ">About</a>
-          <a href="services.html" class="nav-link uppercase ">Services</a>
-          <a href="#" class="nav-link uppercase ">Pricing</a>
-          <a href="#" class="nav-link uppercase ">Insights</a>
-          <a href="#" class="nav-link uppercase ">Contact</a>
-
-          <!-- Login Button -->
-        </nav>
+      <!-- Nav Links (Desktop) -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="index.html" class="nav-link uppercase ">Home</a>
+        <a href="#" class="nav-link uppercase ">About</a>
+        <a href="services.html" class="nav-link uppercase ">Services</a>
+        <a href="#" class="nav-link uppercase ">Pricing</a>
+        <a href="#" class="nav-link uppercase ">Insights</a>
+        <a href="#" class="nav-link uppercase ">Contact</a>
+        
+        <!-- Login Button -->
+      </nav>
         <div class="hidden md:block">
-          <button class="bg-[var(--main-color)] header-btn">
+          <!-- <button class="bg-[var(--main-color)] header-btn">
             Login
-          </button>
+          </button> -->
+            <button id="openModalDesktop" class="bg-[var(--main-color)] header-btn">
+    Login
+  </button>
+
         </div>
 
       </div>
@@ -102,27 +106,82 @@
 
       <!-- Mobile Menu Toggle -->
       <div class="md:hidden">
+        
+        <div class="flex items-center gap-5">
+             <button id="openModalMobile"  class="bg-[var(--main-color)] text-white px-6 py-2 rounded-md uppercase font-semibold hover:bg-orange-600 transition">
+          Login
+        </button>
         <button id="menu-toggle" class="text-gray-700 focus:outline-none">
           ☰
         </button>
+        </div>
       </div>
     </div>
 
     <!-- Mobile Nav -->
     <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
       <nav class="flex flex-col space-y-2">
-        <a href="index.html" class="nav-link uppercase">Home</a>
+        <a href="index.html" class="nav-link uppercase ">Home</a>
         <a href="#" class="nav-link uppercase">About</a>
         <a href="services.html" class="nav-link uppercase">Services</a>
         <a href="#" class="nav-link uppercase">Pricing</a>
         <a href="#" class="nav-link uppercase">Insights</a>
         <a href="#" class="nav-link uppercase">Contact</a>
-        <button
-          class="bg-[var(--main-color)] text-white px-5 py-2 rounded-md uppercase font-semibold hover:bg-orange-600 transition">
-          Login
-        </button>
+     
       </nav>
     </div>
+      <!-- Modal Background -->
+  <div id="authModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center z-50">
+    <!-- Modal Box -->
+    <div class="bg-white rounded-lg shadow-lg w-[90%] md:w-[70%] lg:w-[60%] p-6 relative">
+      
+      <!-- Close Button -->
+     <div class="popup-icons">
+       <button id="closeModal" class="">&times;</button>
+     </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Sign In -->
+        <div>
+          <h2 class="text-xl font-bold mb-4">Sign in</h2>
+          <form class="space-y-4">
+            <input type="email" placeholder="E-mail" class="w-full border rounded-md px-3 py-2">
+            <div class="relative">
+              <input type="password" placeholder="Password" class="w-full border rounded-md px-3 py-2">
+              <span class="absolute right-3 top-2 text-sm text-blue-500 cursor-pointer">Show</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <input type="checkbox" id="remember" class="w-4 h-4">
+              <label for="remember" class="text-sm">Remember me</label>
+            </div>
+            <button type="button" class="w-full bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600">
+              Login
+            </button>
+            <a href="#" class="block text-sm text-blue-600 hover:underline">Forgot your password?</a>
+          </form>
+        </div>
+
+        <!-- Sign Up -->
+        <div>
+          <h2 class="text-xl font-bold mb-4">Sign up</h2>
+          <form class="space-y-4">
+            <input type="text" placeholder="Full Name" class="w-full border rounded-md px-3 py-2">
+            <input type="email" placeholder="E-mail" class="w-full border rounded-md px-3 py-2">
+            <input type="text" placeholder="Phone" class="w-full border rounded-md px-3 py-2">
+            <div class="relative">
+              <input type="password" placeholder="Password" class="w-full border rounded-md px-3 py-2">
+              <span class="absolute right-3 top-2 text-sm text-blue-500 cursor-pointer">Show</span>
+            </div>
+            <button type="button" class="w-full bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600">
+              Create account
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
   </header>
   <div class="main-container">
     <div class="project-banner ">

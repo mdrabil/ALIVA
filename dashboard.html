@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALIVA</title>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+ <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+/* Fade-in animation */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 1s ease-out forwards;
+  opacity: 0;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const animatedElements = document.querySelectorAll("[data-animate]");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const animationType = el.dataset.animate;
+
+        if (animationType === "fade-up") {
+          el.classList.add("animate-fade-up");
+        }
+
+        // Optional: stop observing after animation runs once
+        observer.unobserve(el);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  animatedElements.forEach((el) => {
+    observer.observe(el);
+  });
+});
+</script>
+
+
+</head>
+<body class="bg-white">
+
+  <!-- Header -->
+  <header class="shadow">
+    <div class="flex justify-between items-center main-container">
+      
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img src="/images/image 2.svg" alt="ALIVA Logo" class="h-10 w-auto">
+      </div>
+
+      <div class="flex items-center gap-10">
+
+      <!-- Nav Links (Desktop) -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="index.html" class="nav-link uppercase ">Home</a>
+        <a href="#" class="nav-link uppercase ">About</a>
+        <a href="services.html" class="nav-link uppercase ">Services</a>
+        <a href="#" class="nav-link uppercase ">Pricing</a>
+        <a href="#" class="nav-link uppercase ">Insights</a>
+        <a href="#" class="nav-link uppercase ">Contact</a>
+        
+        <!-- Login Button -->
+      </nav>
+        <div class="hidden md:block">
+          <!-- <button class="bg-[var(--main-color)] header-btn">
+            Login
+          </button> -->
+            <button id="openModalDesktop" class="bg-[var(--main-color)] header-btn">
+    Login
+  </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- Mobile Menu Toggle -->
+      <div class="md:hidden">
+        
+        <div class="flex items-center gap-5">
+             <button id="openModalMobile"  class="bg-[var(--main-color)] text-white px-6 py-2 rounded-md uppercase font-semibold hover:bg-orange-600 transition">
+          Login
+        </button>
+        <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+          ☰
+        </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+      <nav class="flex flex-col space-y-2">
+        <a href="index.html" class="nav-link uppercase ">Home</a>
+        <a href="#" class="nav-link uppercase">About</a>
+        <a href="services.html" class="nav-link uppercase">Services</a>
+        <a href="#" class="nav-link uppercase">Pricing</a>
+        <a href="#" class="nav-link uppercase">Insights</a>
+        <a href="#" class="nav-link uppercase">Contact</a>
+     
+      </nav>
+    </div>
+      <!-- Modal Background -->
+  <div id="authModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center z-50">
+    <!-- Modal Box -->
+    <div class="bg-white rounded-lg shadow-lg w-[90%] md:w-[70%] lg:w-[60%] p-6 relative">
+      
+      <!-- Close Button -->
+     <div class="popup-icons">
+       <button id="closeModal" class="">&times;</button>
+     </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Sign In -->
+        <div>
+          <h2 class="text-xl font-bold mb-4">Sign in</h2>
+          <form class="space-y-4">
+            <input type="email" placeholder="E-mail" class="w-full border rounded-md px-3 py-2">
+            <div class="relative">
+              <input type="password" placeholder="Password" class="w-full border rounded-md px-3 py-2">
+              <span class="absolute right-3 top-2 text-sm text-blue-500 cursor-pointer">Show</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <input type="checkbox" id="remember" class="w-4 h-4">
+              <label for="remember" class="text-sm">Remember me</label>
+            </div>
+            <button type="button" class="w-full bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600">
+              Login
+            </button>
+            <a href="#" class="block text-sm text-blue-600 hover:underline">Forgot your password?</a>
+          </form>
+        </div>
+
+        <!-- Sign Up -->
+        <div>
+          <h2 class="text-xl font-bold mb-4">Sign up</h2>
+          <form class="space-y-4">
+            <input type="text" placeholder="Full Name" class="w-full border rounded-md px-3 py-2">
+            <input type="email" placeholder="E-mail" class="w-full border rounded-md px-3 py-2">
+            <input type="text" placeholder="Phone" class="w-full border rounded-md px-3 py-2">
+            <div class="relative">
+              <input type="password" placeholder="Password" class="w-full border rounded-md px-3 py-2">
+              <span class="absolute right-3 top-2 text-sm text-blue-500 cursor-pointer">Show</span>
+            </div>
+            <button type="button" class="w-full bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600">
+              Create account
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </header>
+
+  
+<div class="main-container">
+
+  <!-- Remaining Hours -->
+  <div class="project-banner text-center">
+    <h1 class="banner-title text-xl md:text-2xl lg:text-3xl font-bold" data-animate="fade-up">
+      Remaining Hours : 10 hr 00 min
+    </h1>
+  </div>
+
+  <!-- Choose Your Hours -->
+  <div class="rounded-lg p-6 mt-8 border border-gray-400">
+    <h2 class="text-lg md:text-xl font-semibold mb-4">
+      Choose Your Hours <span class="text-red-500">*</span>
+    </h2>
+
+    <!-- Slider -->
+    <input type="range" min="10" max="500" value="20" step="10"
+      id="hoursRange"
+      class="w-full h-2 bg-[#FF6D00] rounded-lg cursor-pointer">
+
+    <div class="flex flex-col md:flex-row md:justify-between text-gray-600 mt-8 px-4 gap-2 md:gap-0" data-animate="fade-up">
+      <span class="text-[16px] md:text-[18px] font-normal">10 Hours</span>
+      <span class="text-[16px] md:text-[18px] font-bold text-black">20 Hours Plan @ USD 15/hour</span>
+      <span class="text-[16px] md:text-[18px]">500 Hours</span>
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-between items-center mt-5 gap-4">
+      <div class="px-4 py-2 bg-black rounded-md text-white text-center">
+        <p class="font-bold text-base md:text-lg">Total Price: <span id="totalPrice">$300</span></p>
+      </div>
+      <button class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg shadow w-full md:w-auto">
+        Buy Now
+      </button>
+    </div>
+  </div>
+
+  <!-- Most Purchased -->
+  <div class="rounded-lg p-6 md:p-8 mt-8 border-2 border-gray-900" data-animate="fade-up">
+    <h2 class="text-center text-2xl md:text-[34px] font-semibold mb-8">Most Purchased</h2>
+    <div class="flex justify-center flex-col md:flex-row items-center gap-6">
+      <div class="bg-[var(--other-bg-color)] text-center py-6 rounded-lg shadow cursor-pointer hover:scale-105 transition flex flex-col items-center justify-center gap-2" style="width: 280px;">
+        <p class="font-bold text-2xl md:text-[34px] text-[var(--main-color)]">30 HOURS</p>
+        <div class="bg-[#1E293B] h-[2px] w-[140px]"></div>
+        <p class="text-gray-700">$270</p>
+      </div>
+
+ <div class="bg-[var(--other-bg-color)] text-center py-6 rounded-lg shadow cursor-pointer hover:scale-105 transition flex flex-col items-center justify-center gap-2" style="width: 280px;">
+        <p class="font-bold text-2xl md:text-[34px] text-[var(--main-color)]">50 HOURS</p>
+        <div class="bg-[#1E293B] h-[2px] w-[140px]"></div>
+        <p class="text-gray-700 mt-2">$450</p>
+      </div>
+
+ <div class="bg-[var(--other-bg-color)] text-center py-6 rounded-lg shadow cursor-pointer hover:scale-105 transition flex flex-col items-center justify-center gap-2" style="width: 280px;">
+        <p class="font-bold text-2xl md:text-[34px] text-[var(--main-color)]">80 HOURS</p>
+        <div class="bg-[#1E293B] h-[2px] w-[140px]"></div>
+        <p class="text-gray-700 mt-2">$720</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transaction Details -->
+  <!-- Choose Your Hours -->
+  <div class="  rounded-lg p-6  mt-8 rounded-md" style="border: 1px solid rgba(128, 128, 128, 0.468);" data-animate="fade-up">
+    <div class="flex items-center flex-col md:flex-row pb-6 gap-4">
+<h2 class="text-lg md:text-2xl font-semibold" style="font-size: 24px; font-weight: 600; white-space:nowrap;">
+  Transaction Details 
+  <span class="block text-[16px] md:inline text-[24px] ">
+    (Please allow time for updates)
+  </span>
+</h2>
+
+      <div class="flex items-center justify-between w-full">
+        <button class="border border-collapse text-red-500 font-bold px-4 py-2 rounded">Delete <i class="ri-delete-bin-6-line"></i></button>
+        <button class="border border-collapse text-green-500 font-bold px-4 py-2 rounded">Add New <i class="ri-add-circle-line"></i></button>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="overflow-x-auto" data-animate="fade-up">
+    <table class="w-full text-sm md:text-base">
+  <thead class="bg-blue-100">
+    <tr>
+      <!-- ✅ Header with master checkbox -->
+      <th class="p-2 text-left uppercase text-xs md:text-lg font-bold flex items-center gap-2">
+        <input type="checkbox" class="w-3 h-3 md:w-5 h-5 border border-black  accent-black cursor-pointer">
+        Transaction ID
+      </th>
+      <th class="p-2 text-left uppercase text-xs md:text-lg font-bold">Transaction Date</th>
+      <th class="p-2 text-right uppercase text-xs md:text-lg font-bold">Amount (USD)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- ✅ First Row -->
+    <tr class="border-b">
+      <td class="p-2 text-left font-semibold flex items-center gap-2">
+        <input type="checkbox" class="w-3 h-3 md:w-5 h-5 border border-black cursor-pointer">
+        12345XYZ6789
+      </td>
+      <td class="p-2 text-left font-semibold">29/08/2025</td>
+      <td class="p-2 text-right font-semibold">$120.00</td>
+    </tr>
+
+    <!-- ✅ Second Row -->
+    <tr class="border-b">
+      <td class="p-2 text-left font-semibold flex items-center gap-2">
+        <input type="checkbox"class="w-3 h-3 md:w-5 h-5 border border-black cursor-pointer">
+        98765XYZ1234
+      </td>
+      <td class="p-2 text-left font-semibold">28/08/2025</td>
+      <td class="p-2 text-right font-semibold">$99.00</td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+    <!-- Pagination -->
+
+
+  </div>
+    <div class="flex flex-row flex-wrap justify-between items-center mt-4 text-sm gap-2 bg-[var(--light-bg-color)] px-4 py-2 rounded">
+  <!-- Page Info -->
+  <p class="text-[14px] md:text-[16px] whitespace-nowrap">Page: 1 of 2</p>
+
+  <!-- Page Size -->
+  <div class="flex items-center space-x-2 whitespace-nowrap">
+    <span>Page Size:</span>
+    <select class="border px-2 py-1 rounded text-sm md:text-base">
+      <option>10</option>
+      <option>25</option>
+      <option>50</option>
+    </select>
+  </div>
+
+  <!-- Page Numbers -->
+  <div class="flex items-center space-x-2 flex-wrap">
+    <button class="p-1 rounded-md bg-white"><i class="ri-arrow-left-double-line"></i></button>
+    <button class="p-1 rounded-md bg-white"><i class="ri-arrow-left-s-line"></i></button>
+    <button class="px-2 py-1 rounded-md bg-white">1</button>
+    <button class="p-1 rounded-md bg-white"><i class="ri-arrow-right-s-line"></i></button>
+    <button class="p-1 rounded-md bg-white"><i class="ri-arrow-right-double-line"></i></button>
+  </div>
+</div>
+</div>
+
+
+  
+
+  <!-- Script for slider -->
+  <script>
+    const range = document.getElementById('hoursRange');
+    const totalPrice = document.getElementById('totalPrice');
+
+    range.addEventListener('input', () => {
+      const value = range.value;
+      const price = value * 15;
+      totalPrice.textContent = `$${price}`;
+    });
+  </script>
+<script src="/js/main.js"></script>
+</body>
+</html>

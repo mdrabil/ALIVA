@@ -89,9 +89,13 @@ document.addEventListener("DOMContentLoaded", function () {
         <!-- Login Button -->
       </nav>
         <div class="hidden md:block">
-          <button class="bg-[var(--main-color)] header-btn">
+          <!-- <button class="bg-[var(--main-color)] header-btn">
             Login
-          </button>
+          </button> -->
+            <button id="openModalDesktop" class="bg-[var(--main-color)] header-btn">
+    Login
+  </button>
+
         </div>
 
       </div>
@@ -99,9 +103,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
       <!-- Mobile Menu Toggle -->
       <div class="md:hidden">
+        
+        <div class="flex items-center gap-5">
+             <button id="openModalMobile"  class="bg-[var(--main-color)] text-white px-6 py-2 rounded-md uppercase font-semibold hover:bg-orange-600 transition">
+          Login
+        </button>
         <button id="menu-toggle" class="text-gray-700 focus:outline-none">
           ☰
         </button>
+        </div>
       </div>
     </div>
 
@@ -114,55 +124,112 @@ document.addEventListener("DOMContentLoaded", function () {
         <a href="#" class="nav-link uppercase">Pricing</a>
         <a href="#" class="nav-link uppercase">Insights</a>
         <a href="#" class="nav-link uppercase">Contact</a>
-        <button class="bg-[var(--main-color)] text-white px-5 py-2 rounded-md uppercase font-semibold hover:bg-orange-600 transition">
-          Login
-        </button>
+     
       </nav>
     </div>
-  </header>
-<div class="main-container">
- <div class="flex flex-col mb-10 md:flex-row w-full gap-10 mb-10"  data-animate="fade-up">
+      <!-- Modal Background -->
+  <div id="authModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center z-50">
+    <!-- Modal Box -->
+    <div class="bg-white rounded-lg shadow-lg w-[90%] md:w-[70%] lg:w-[60%] p-6 relative">
+      
+      <!-- Close Button -->
+     <div class="popup-icons">
+       <button id="closeModal" class="">&times;</button>
+     </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Sign In -->
+        <div>
+          <h2 class="text-xl font-bold mb-4">Sign in</h2>
+          <form class="space-y-4">
+            <input type="email" placeholder="E-mail" class="w-full border rounded-md px-3 py-2">
+            <div class="relative">
+              <input type="password" placeholder="Password" class="w-full border rounded-md px-3 py-2">
+              <span class="absolute right-3 top-2 text-sm text-blue-500 cursor-pointer">Show</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <input type="checkbox" id="remember" class="w-4 h-4">
+              <label for="remember" class="text-sm">Remember me</label>
+            </div>
+            <button type="button" class="w-full bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600">
+              Login
+            </button>
+            <a href="#" class="block text-sm text-blue-600 hover:underline">Forgot your password?</a>
+          </form>
+        </div>
 
-    <!-- Left Image + Support Box -->
-    <div class="relative flex-2 flex items-center justify-center"  data-animate="fade-up">
-      <img src="/images/men image 1.png" 
-           alt="Virtual Assistant" 
-           class="rounded-lg shadow-lg object-cover w-full">
-      <div class="absolute bottom-2  bg-[var(--dark-bg-color)] bg-opacity-90 text-white rounded-md shadow-md">
-        <ul class="list-disc list-inside p-4 text-lg space-y-2">
+        <!-- Sign Up -->
+        <div>
+          <h2 class="text-xl font-bold mb-4">Sign up</h2>
+          <form class="space-y-4">
+            <input type="text" placeholder="Full Name" class="w-full border rounded-md px-3 py-2">
+            <input type="email" placeholder="E-mail" class="w-full border rounded-md px-3 py-2">
+            <input type="text" placeholder="Phone" class="w-full border rounded-md px-3 py-2">
+            <div class="relative">
+              <input type="password" placeholder="Password" class="w-full border rounded-md px-3 py-2">
+              <span class="absolute right-3 top-2 text-sm text-blue-500 cursor-pointer">Show</span>
+            </div>
+            <button type="button" class="w-full bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600">
+              Create account
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </header>
+
+  
+<div class="main-container">
+<div class="flex flex-col mb-10 md:flex-row w-full gap-10" data-animate="fade-up">
+
+  <!-- Left Image + Support Box -->
+  <div class="flex-2 relative flex items-center justify-center rounded-lg  overflow-hidden" data-animate="fade-up">
+    <img src="/images/men image 1.png" 
+         alt="Virtual Assistant" 
+         class="object-cover " style="width: 100%;">
+    
+    <!-- Overlay Box -->
+    <div class="absolute inset-0 flex items-end justify-center">
+      <div class="bg-[var(--dark-bg-color)] bg-opacity-90 text-white rounded-md shadow-md w-[95%] mb-4 p-4">
+        <ul class="list-disc list-inside text-lg space-y-2">
           <li>Dedicated Support, Every Time</li>
           <li>No Subscriptions or Hidden Fees</li>
         </ul>
       </div>
     </div>
-
-    <!-- Right Content -->
-    <div class="flex-1 bg-[var(--light-bg-color)] px-6  rounded-lg shadow-sm flex flex-col ">
-      <h1 class="home-text">
-        Simplify Your Life With A
-        <br>
-         Virtual 
-         Assistant 
-        <span class="text-green-600"> - Flat $9/Hr</span>
-      </h1>
-      <p class="mb-6 text-lg md:text-xl text-gray-700">
-        By managing your daily administrative tasks, your time and energy are freed up 
-        to focus on what matters most. Making online visibility easy allows you to grow without stress.
-      </p>
-      <button class="project-btn bg-orange-500 text-white font-semibold py-3 px-6 rounded-md hover:bg-orange-600 transition duration-300 w-fit">
-        Let’s Get Started - Sign Up Now
-      </button>
-    </div>
-
   </div>
+
+  <!-- Right Content -->
+  <div class="flex-1 bg-[var(--light-bg-color)] px-3  py-3 md:px-12 py-0 rounded-lg shadow-sm flex items-start justify-center flex-col">
+    <h1 class="home-text">
+      Simplify Your Life With A
+      <br>
+      Virtual 
+      Assistant 
+      <span class="text-[var(--sc-color)]"> - Flat $9/Hr</span>
+    </h1>
+    <p class="mb-6 text-lg md:text-xl text-gray-700">
+      By managing your daily administrative tasks, your time and energy are freed up 
+      to focus on what matters most. Making online visibility easy allows you to grow without stress.
+    </p>
+    <button class="project-btn bg-orange-500 text-white font-semibold py-3 px-6 rounded-md hover:bg-orange-600 transition duration-300 w-fit">
+      Let’s Get Started - Sign Up Now
+    </button>
+  </div>
+
+</div>
+
 
 
 <div>
   <div class="header-title">
-    <h1>
+    <h2>
   The Support You Need to Thrive
 
-</h1>
+</h2>
     <p>A Wing General Virtual Assistant (GVA) will take care of your administrative and personal work and help you streamline your day-to-day operations so you can focus on growing your business and achieving your goals.</p>
   </div>
 
@@ -170,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="contain-boxes" data-animate="fade-up">
     <div class="content-box">
       <div class="right-img">
-        <img src="/images/Admin-pana 1.png" alt="">
+        <img src="/images/homeicons/Admin-pana 1.svg">
       </div>
       <div class="content">
         <h3>Admin Services</h3>
@@ -179,7 +246,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
      <div class="content-box">
       <div class="right-img">
-        <img src="/images/Product iteration-rafiki 1.png" alt="">
+        <img src="/images/homeicons/Product iteration-rafiki 1.svg" alt="">
       </div>
       <div class="content">
         <h3>Business Operations</h3>
@@ -191,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function () {
      <div class="contain-boxes" data-animate="fade-up">
     <div class="content-box">
       <div class="right-img">
-        <img src="/images/Niche service marketplace-amico 1.png" alt="">
+        <img src="/images/homeicons/Niche service marketplace-amico 1.svg" alt="">
       </div>
       <div class="content">
         <h3>eCommerce Support</h3>
@@ -200,7 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
      <div class="content-box">
       <div class="right-img">
-        <img src="/images/Illustration.png" alt="">
+        <img src="/images/homeicons/Illustration.svg" alt="">
       </div>
       <div class="content">
         <h3>CRM & Bookkeeping</h3>
@@ -212,7 +279,7 @@ document.addEventListener("DOMContentLoaded", function () {
        <div class="contain-boxes"  data-animate="fade-up">
     <div class="content-box">
       <div class="right-img">
-        <img src="/images/Social media-cuate 1.png" alt="">
+        <img src="/images/homeicons/Social media-cuate 1.svg" alt="">
       </div>
       <div class="content">
         <h3>Social Media</h3>
@@ -221,7 +288,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
      <div class="content-box">
       <div class="right-img">
-        <img src="/images/Conversion rate optimization-amico 1.png" alt="">
+        <img src="/images/homeicons/Conversion rate optimization-amico 1.svg" alt="">
       </div>
       <div class="content">
         <h3>Digital Marketing</h3>
@@ -232,7 +299,7 @@ document.addEventListener("DOMContentLoaded", function () {
          <div class="contain-boxes" data-animate="fade-up">
     <div class="content-box">
       <div class="right-img">
-        <img src="/images/Designer-amico 1.png" alt="">
+        <img src="/images/homeicons/Designer-amico 1.svg" alt="">
       </div>
       <div class="content">
         <h3>Graphic Design</h3>
@@ -241,7 +308,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
      <div class="content-box">
       <div class="right-img">
-        <img src="/images/Static website-rafiki 1.png" alt="">
+        <img src="/images/homeicons/Static website-rafiki 1.svg" alt="">
       </div>
       <div class="content">
         <h3>Website Design</h3>
@@ -276,30 +343,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+
 <div>
 
   <div class="header-title">
-    <h1>
+    <h2>
 Your Life, Simplified in 3 Steps
 
-</h1>
+</h2>
     <!-- <p>A Wing General Virtual Assistant (GVA) will take care of your administrative and personal work and help you streamline your day-to-day operations so you can focus on growing your business and achieving your goals.</p> -->
   </div>
 <div class="section-4-boxes">
   <div class="section-4-box" data-animate="fade-up">
-    <img src="/images/Login-rafiki 1.png" alt="">
+    <img src="/images/homeicons/Login-rafiki 1.svg" alt="">
     <h2> Sign Up</h2>
     <p>An easy process that takes 
 less than a minute.</p>
   </div>
     <div class="section-4-box"  data-animate="fade-up">
-    <img src="/images/Voice chat-amico 1.png" alt="">
+    <img src="/images/homeicons/Voice chat-amico 1.svg" alt="">
     <h2>  Let’s Talk</h2>
     <p>A conversation to 
 understand the needs .</p>
   </div>
     <div class="section-4-box"  data-animate="fade-up">
-    <img src="/images/Static website-rafiki 1 (1).png" alt="">
+    <img src="/images/homeicons/Static website-rafiki 1 (1).svg" alt="">
     <h2>Submit Your Task</h2>
     <p>Just send tasks and
  consider them done.</p>
@@ -308,8 +377,10 @@ understand the needs .</p>
 </div>
 
 
-<div class="section-5 flex gap-10 justify-between mb-10">
-  <div class="section-5-left w-full">
+
+
+<div class="section-5  flex gap-10 justify-between mb-10">
+  <div class="section-5-left w-full rounded-md">
     <h1><span>15 years since</span> we help you to grow your business</h1>
     <p>A Wing General Virtual Assistant (GVA) will take care of your administrative and personal personal peeronsl <br> work and help you streamline your day-to-day operations so you can focus on growing your business and <br> achieving your goals.</p>
     <div class="section-5-btn" data-animate="fade-up"
@@ -328,10 +399,10 @@ understand the needs .</p>
 <div class="section-6 mb-10">
 
     <div class="header-title" data-animate="fade-up">
-    <h1>
+    <h2>
   Frequently Asked Questions
 
-</h1>
+</h2>
     <p>
   Ally VA focuses on quality, not quantity. A limited number of clients ensures each task gets the attention it deserves. No generic service. Each task is handled with care and precision, ensuring satisfaction.
     </p>

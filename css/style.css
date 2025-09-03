@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -9,7 +11,8 @@
       /* font-family: "Roboto"; */
 
 /* text-decoration: none; */
-  font-family: 'Roboto', sans-serif;  /* font-variation-settings: */
+  /* font-family: 'Roboto', sans-serif;  */
+  font-family: "Inter", sans-serif;
 }
 
 :root {
@@ -17,7 +20,9 @@
   --text-color:#2C353E;
   --sc-color:#368268; 
   --footer-color: #1E293B; 
---lato-font:   "Lato", sans-serif;
+/* --lato-font:   "Lato", sans-serif; */
+--lato-font:  "Inter", sans-serif;
+
 --roboto-font:    'Roboto', sans-serif;
   --border-color: #e5e7eb; 
   --light-bg-color: #E3F1FE; 
@@ -63,9 +68,9 @@ body {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -3px;                       /* Distance from text */
+  bottom: -1px;                       /* Distance from text */
   width: 100%;
-  height: 3px;                        /* Thickness of underline */
+  height: 2px;                        /* Thickness of underline */
   background-color: #2563EB;          /* Blue underline */
   transform: scaleX(0);
   transform-origin: left;
@@ -87,7 +92,24 @@ body {
   color: #2563EB !important;
 }
 
+.popup-icons{
+  background-color: var(--footer-color);
+  color: white;
+  border: 3px solid white;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 2px;
+  top: -10px;
+  position: absolute;
+  right: -10px;
+    /* ✅ Box Shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 
+}
 /* Login button styling */
 .header-btn {
   text-transform: uppercase;
@@ -124,7 +146,7 @@ body {
 .header-title{
   text-align: center;
 }
-.header-title h1{
+.header-title h2{
 font-weight: 600;
 font-size: 35px;
 font-variant: titlecase;
@@ -143,7 +165,10 @@ line-height: 28px;
 .home-text{
   font-size: 48px;
   font-weight: 700;
-  padding: 20px;
+  line-height: 73px;
+  /* padding: 20px 0px; */
+padding-bottom:  10px;
+
 }
 
 
@@ -191,7 +216,7 @@ line-height: 28px;
   font-size: 19px;
   font-style: bold;
   font-weight: 700;
-  padding-bottom: 5px;
+  /* padding-bottom: 5px; */
 }
 
 .content-box  p{
@@ -372,9 +397,10 @@ padding: 10px 0px;
   .home-text{
   font-size: 25px;
   font-weight: 700;
-  padding: 10px 0px 0px;
+  line-height: normal;
+  /* padding: 10px 0px 0px; */
 }
-  .header-title h1{
+  .header-title h2{
 font-weight: 600;
 font-size: 25px;
 font-variant: titlecase;
@@ -550,3 +576,6 @@ line-height: 28px;
     font-size: 16px;
   }
 }
+
+
+
