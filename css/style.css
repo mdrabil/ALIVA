@@ -212,6 +212,18 @@ padding-bottom:  10px;
   /* justify-content: space-between; */
 
 }
+
+
+.right-img {
+  width: 70px;        /* fixed box width */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* optional: center the image inside box */
+}
+
+.content {
+  flex: 1;            /* take the remaining space */
+}
 .content-box h3{
   font-size: 19px;
   font-style: bold;
@@ -465,7 +477,6 @@ line-height: 28px;
   }
     .content-box p{
     font-size: 12px;
-    line-height: 18px;
   }
 
   .content-box img {
