@@ -35,6 +35,8 @@
 body {
   background-color: var(--bg-color);
   font-family: 'Josefin Sans', sans-serif;
+      max-width: 1500px;  /* maximum width, change as per requirement */
+  margin: 0 auto;     
 }
 
 .main-container{
